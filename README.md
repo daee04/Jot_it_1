@@ -2,4 +2,4 @@
 <br>
 Developer : Shahid Amin
 <br>
-Add your thoughts and save and access them whenever you wish
+Add your thoughts save and access them whenever you wish.😎
