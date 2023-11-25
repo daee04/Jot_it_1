@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.jotitbyshahidaminbhat.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <!-- Define actions to navigate to other fragments -->
+        <action
+            android:id="@+id/action_homeFragment_to_newNoteFragment"
+            app:destination="@id/newNoteFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_updateNoteFragment"
+            app:destination="@id/updateNoteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newNoteFragment"
+        android:name="com.example.jotitbyshahidaminbhat.fragments.NewNoteFragment"
+        android:label="fragment_new_note"
+        tools:layout="@layout/fragment_new_note">
+        <!-- Define the pop behavior when navigating back from this fragment -->
+        <action
+            android:id="@+id/action_newNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/updateNoteFragment"
+        android:name="com.example.jotitbyshahidaminbhat.fragments.UpdateNoteFragment"
+        android:label="fragment_update_note">
+        <!-- Define the pop behavior when navigating back from this fragment -->
+        <action
+            android:id="@+id/action_updateNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+
+        <argument
+            android:name="note"
+            app:argType="com.example.jotitbyshahidaminbhat.model.Note"
+            app:nullable="true" />
+    </fragment>
+</navigation>
